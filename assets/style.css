@@ -1,0 +1,177 @@
+/* This creates a skinny side bar fixed to the left of the page */
+.sidebar {
+    position: fixed;
+    top: 41px;
+    left: 0;
+    bottom: 0;
+    width: 6rem;
+    padding: 2rem 1rem;
+    background-color: #226f747b;
+    z-index: 1050;
+    transition: width 0.3s ease-in-out;
+   
+  }
+  
+/* when the user hovers on the sidebar, expand it */
+  .sidebar:hover {
+    width: 20rem;
+    background-color: #226f74;
+  }
+
+/* Styling for the image inside the sidebar */
+.sidebar-image {
+  display: block; /* Ensures the image is treated as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  max-width: 100%; /* Prevents the image from exceeding the sidebar width */
+  height: auto; /* Maintains aspect ratio */
+  transform: scale(0.5);
+  transition: transform 0.3s ease-in-out; /* Adds smooth scaling effect */
+}
+
+/* Optional scaling effect when hovering on the expanded sidebar */
+.sidebar:hover .sidebar-image {
+  transform: scale(1.0); /* Slightly enlarge the image on hover */
+}
+
+
+
+/* Default styling for the SVG inside the sidebar - initially invisible */
+.sidebar_svg {
+  width: 120px;
+  height: 120px;
+  filter: invert(1) brightness(2); /* Keeps the styling */
+  opacity: 0; /* Initially invisible */
+  pointer-events: none; /* Prevent interaction when invisible */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+  display: flex;
+  justify-content: center; /* Horizontally center child elements */
+}
+
+
+/* Show the SVG and start the color animation on sidebar hover */
+.sidebar:hover .sidebar_svg {
+  opacity: 1; /* Fully visible */
+  /*pointer-events: auto; /* Enable interaction when visible */
+  /* display: flex; */
+  /* justify-content: center; /* Horizontally center child elements */
+} 
+
+.sidebar-footer {
+  display: flex;
+  justify-content: center; /* Horizontally center the image */
+  
+  margin-left: 50px;     
+  padding: 20px;          /* Optional: Add some padding */
+  
+}
+
+  /* Target the span within dmc.NavLink */
+.sidebar .mantine-NavLink-label {
+  /*font-weight: bold;*/
+  color: rgb(3, 3, 3);
+  font-size: 14px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+  /* Show the image on hover  */
+  .sidebar .sidebar-image {
+    opacity: 1;
+    display: flex; 
+    justify-content: center;
+    
+  }
+
+  .content {
+    margin-left: 6rem;
+    margin-right: 1rem;
+    padding: 2rem 0rem;
+    padding-right: 10rem;
+    padding-left: 8rem;
+    
+  }
+
+
+  #sidebar:hover {
+    width: 300px;
+  }
+
+
+  /* Target the span within dmc.NavLink */
+  .sidebar .mantine-NavLink-label:hover {
+    /*font-weight: bold;*/
+    color: rgb(12, 12, 12);
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+  }
+
+  .sidebar-footer{
+    width: 50px;
+  }
+
+
+.custom-tab {
+    color:#dcdfe4;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top: 3px solid transparent !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    background-color: #34393d !important;
+    padding: 12px !important;
+    font-family: "system-ui";
+    font-style: italic;
+    font-size: larger;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    
+}
+.custom-tab--selected {
+    color: black;
+    box-shadow: 1px 1px 0px white;
+    font-weight: bold;
+    border-left: 1px solid lightgrey !important;
+    border-right: 1px solid lightgrey !important;
+    border-top: 6px solid #4ee309 !important;
+    background-color: #e6ebf0 !important;;
+}
+
+
+/* styles.css */
+.carousel-image {
+  width: 50%;   /* Fit image to the width of the container */
+  height: auto;  /* Adjust height to maintain aspect ratio */
+  object-fit: cover;  /* Adjusts the image within its box */
+}
+
+/* Default styling for the NavLink label */
+.sidebar_navlink .mantine-NavLink-label {
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+
+  display: none;
+}
+
+/* Make the label disappear on sidebar hover */
+.sidebar:hover .sidebar_navlink .mantine-NavLink-label {
+  opacity: 1; /* Fully transparent */
+  /*pointer-events: none;  Prevent interaction when invisible */
+}
+
+
+/* Hide NavLink children by default */
+.sidebar .mantine-NavLink-children {
+  display: none; /* Hide the children elements */
+}
+
+/* Show NavLink children when sidebar is hovered */
+.sidebar:hover .mantine-NavLink-children {
+  display: block; /* Make children elements visible */
+}
+
+/* Optional: Add smooth transition for a better effect */
+.sidebar .mantine-NavLink-children {
+  transition: all 0.3s ease-in-out;
+}
